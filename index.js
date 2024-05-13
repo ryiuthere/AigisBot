@@ -5,7 +5,7 @@ const { token } = require('./config.json');
 const { DisTube } = require('distube');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates] });
-client.distube = new DisTube(client, { searchSongs: 10 });
+client.distube = new DisTube(client, { searchSongs: 10, leaveOnFinish: false, leaveOnStop: false, leaveOnEmpty: true });
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
